@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="js/react.development.js"></script>
+    <script crossorigin src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>My SL react</title>
+</head>
+<body>
+    <h3>My Shopping List</h3>
+    <input type="text" >
+    <input type="button" value="Add">
+    <div id="root"></div>
+<script type="text/jsx">
+    
+
+   const data =[{id:1, text: "Bread", },
+                {id:2, text:"Sugar",},
+                {id: 3, text: "Milk", }];
+
+               
+                function App(props){
+                    console.log(props)
+                    return (
+                        <div className="container" type="text" >
+                        <ul><li>{props.text}<button>Delete</button></li>
+                        </ul>
+                        
+                        </div> 
+                          
+                    );
+                }
+
+                let appList=data.map(i=> <App key={i.id} text={i.text} button={i.delete}/>);
+                ReactDOM.render(
+                    <React.StrictMode>
+                    {appList}
+                  </React.StrictMode>, document.getElementById ("root"));
+    
+</script>
+</body>
+</html>

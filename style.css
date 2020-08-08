@@ -1,0 +1,8 @@
+.container{
+    display: inline;
+    text-align: center;
+}
+#root{
+    position: absolute;
+    margin-top: auto;
+}
